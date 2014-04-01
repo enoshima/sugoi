@@ -1,0 +1,25 @@
+1. p36のfactorialを(a)guard, (b)if文, (c)case文で書き表しなさい。
+
+2. うるう年は4で割り切れる年、ただし、100で割り切れる年はうるう年ではなく、400で割り切れる年はうるう年である。ある年がうるう年かどうか判定するHaskellコードを書きなさい。
+3.以下の関数を定義する。
+(.) :: (b -> c) -> (a -> b) -> (a->c)
+(f.g) x = f (g x)
+
+fst :: (a, b) -> a
+fst (x, y) = x
+
+snd :: (a, b) -> b
+snd (x, y) = y
+
+pair :: (a -> b, a -> c) -> a -> (b, c)
+pair (f, g) x = (f x, g y)
+
+cross :: (a -> b, c -> d) -> (a, c) -> (b, d)
+cross (f, g) = pair (f . fst, g . snd)
+
+このとき、
+(a) fst . pair(f, g)の値は何か？
+(b) snd . pair(f, g)の値は何か？
+(c) pair (f, g) . h = pair (f . h, g . h)を示せ。
+(d) cross (f, g) . pair (h, k) = pair (f . h, g . k)を示せ。
+(e) cross (f, g) . cross (h, k) = cross (f . h, g . k)を示せ。
