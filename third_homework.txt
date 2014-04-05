@@ -12,7 +12,7 @@ snd :: (a, b) -> b
 snd (x, y) = y
 
 pair :: (a -> b, a -> c) -> a -> (b, c)
-pair (f, g) x = (f x, g y)
+pair (f, g) x = (f x, g x)
 
 cross :: (a -> b, c -> d) -> (a, c) -> (b, d)
 cross (f, g) = pair (f . fst, g . snd)
